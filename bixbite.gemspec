@@ -5,22 +5,21 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bixbite}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Richard Herrera", "Lenny Burdette"]
-  s.date = %q{2010-01-02}
+  s.date = %q{2010-01-03}
   s.default_executable = %q{bixbite}
   s.description = %q{Bixbite is a project initializer for dynamic to static publishing}
   s.email = %q{rich@doctyper.com}
   s.executables = ["bixbite"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.markdown"
   ]
   s.files = [
     "LICENSE",
-     "README.rdoc",
      "VERSION",
      "lib/bixbite.rb",
      "lib/bixbite/command.rb",
