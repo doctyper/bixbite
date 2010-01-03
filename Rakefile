@@ -5,12 +5,26 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "bixbite"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{A project initializer for dynamic to static publishing}
+    gem.description = %Q{Bixbite is a project initializer for dynamic to static publishing}
     gem.email = "rich@doctyper.com"
     gem.homepage = "http://github.com/doctyper/bixbite"
-    gem.authors = ["Richard Herrera"]
-    gem.add_development_dependency "thoughtbot-shoulda"
+    gem.authors = ["Richard Herrera", "Lenny Burdette"]
+    gem.executables = ["bixbite"]
+    gem.require_paths << "template"
+    gem.files = [
+      "lib/**/*",
+      "template/deploy/public_html/.htaccess",
+      "template/documentation/js/.htaccess",
+      "template/**/*",
+      "template/**/.htaccess",
+      "LICENSE",
+      "README.rdoc",
+      "VERSION"
+    ]
+    gem.add_dependency("closure-compiler", ">= 0.1.5")
+    gem.add_dependency("yui-compressor", ">= 0.9.1")
+    gem.add_dependency("highline", ">= 1.5.1")
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError

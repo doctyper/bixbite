@@ -1,0 +1,35 @@
+files:
+    - js/**/**
+    - images/**/**
+    - css/**/**
+
+render:
+    - *.html
+
+compress:
+    css:
+        min-dir:
+            - css/min/
+        
+        cmn/global.css:
+            - css/cmn/global.css
+        
+        standalone:
+            - css/cmn/ie.css
+            - css/cmn/ie6.css
+            - css/*.css
+
+    js:
+        min-dir:
+            - js/min/
+        
+        cmn/bootstrap.js:
+            - js/cmn/bootstrap.js
+            - js/cmn/lib/LAB.js
+            
+        cmn/global.js:
+            - js/cmn/lib/jquery-latest.js
+            - js/cmn/global.js
+            
+        standalone:
+            - js/*.js

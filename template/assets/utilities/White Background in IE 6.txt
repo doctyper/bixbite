@@ -1,0 +1,17 @@
+Install ImageMagick
+
+> convert image-1.png -background "rgb(255,255,255)" image-2.png
+
+Batch:
+
+cd into image directory, then:
+
+# Add bKGD chunk
+find . -name "*.png" -exec /opt/local/bin/convert '{}' -background "rgb(255, 255, 255)" '{}' \; -print
+
+# Run pngout to recompress (but keep bKGD!)
+find . -name "*.png" -exec ~/Sites/logitech/logitech.com/trunk/assets/utilities/pngout '{}' -kbKGD -y '{}' \; -print
+
+# Both
+cd /Volumes/files/Projects/Logitech.com/07_Logitech.com_AssetProduction/04_Teamspace/Phase\ 3\ highlight\ production/
+find . -name "*.png" -exec /opt/local/bin/convert '{}' -background "rgb(255, 255, 255)" '{}' \; -exec ~/Sites/logitech/logitech.com/trunk/assets/utilities/pngout '{}' -kbKGD -y '{}' \; -print

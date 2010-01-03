@@ -1,0 +1,35 @@
+<?php
+require('includes/namespace.inc');
+
+$page->setPageTitle('Index');
+
+ob_start();
+?>
+
+			<!-- Start [#content] -->
+			<div id="content">
+				<h1>Completed Pages</h1>
+				
+				<div id="contentWrapper">
+					<ul style="font-size: 16px; line-height: 1.5;">
+<?php
+foreach ($page->listFilesInDirectory(SITE_ROOT, "html") as $key => $value) {
+
+	if ($value != "index.html") {
+
+		$raw = file_get_contents(SITE_ROOT . $value);
+		$regex = '/\$page->setPageTitle\(\'([^\']+)\'\)/';
+		preg_match($regex, $raw, $matches, PREG_OFFSET_CAPTURE);
+		$title = $matches[1][0];
+
+		echo "\t\t\t\t\t" . '<li><a href="' . $value . '">' . $title . '</a></li>' . "\n";
+	}
+}
+?>
+					</ul>
+				</div>
+				
+			</div>
+			<!-- End [#content] -->
+			
+<?php $page->output(ob_get_clean()); ?>

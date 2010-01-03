@@ -1,0 +1,46 @@
+name:
+    - The Foo Project
+    
+namespace:
+    - FOO
+
+parse:
+    - src/**/*
+    - Rakefile
+
+directories:
+    assets:
+        root:
+            - assets/
+        natural-docs:
+            - assets/naturaldocs/
+        bixbite:
+            - assets/bixbite/
+        utilities:
+            - assets/utilities/
+    deploy:
+        root:
+            - deploy/
+        public_html:
+            root:
+                - deploy/public_html/
+            css:
+                - deploy/public_html/css/
+            images:
+                - deploy/public_html/images/
+            js:
+                - deploy/public_html/js/
+    documentation:
+        root:
+            - documentation/
+        js-docs:
+            - documentation/js/
+    src:
+        root:
+            - src/
+        html:
+            - src/html/
+        yaml:
+            - src/yaml/
+        templates:
+            - src/templates/

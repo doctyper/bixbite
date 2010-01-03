@@ -1,0 +1,7 @@
+files:
+    - *.html
+
+snippets:
+    - request/*.html
+    - request/**/*.html
+    

@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+require "bixbite"
+require "optparse"
+require "yaml"
+require "fileutils"
+require "net/http"
+require "highline/import"
+
+# Argument defaults
+options = {
+  :source => File.expand_path(File.dirname(__FILE__) + "/../template/"),
+  :destination => File.expand_path(Dir.getwd),
+  :lib => 'jQuery'
+}
+
+USER_TEMPLATE = File.expand_path(File.dirname(__FILE__) + "/../user-defined-template")
+options[:source] = USER_TEMPLATE if File.exists?(USER_TEMPLATE)
+
+# Config YAML File
+options[:config] = YAML.load_file(File.join(options[:source], "src", "yaml", "config.yml"));
+
+# Get arguments
+opts = OptionParser.new do |o|
+  o.banner = 'Usage: bixbite "Project Title" PROJECTNAMESPACE [source] [destination]'
+  o.separator ""
+
+  o.on("-l", "--js-lib [ARG]", "Use specified JavaScript library (options: jQuery, YUI, MooTools)") do |lib|
+    options[:lib] = lib
+  end
+  
+  o.on_tail("-s", "--source-directory [ARG]", "Override bundled template with user-defined template") do |path|
+    override = ask("Override bundled template with #{File.expand_path(path)} (admin privileges required)? [Y/n]  ")
+    
+    if (override.downcase == "y")
+      system %(sudo rm -rf #{USER_TEMPLATE}) if File.exists?(USER_TEMPLATE)
+      system %(sudo cp -r #{File.expand_path(path)} #{USER_TEMPLATE})
+    end
+    
+    exit
+  end
+  
+  o.separator ""
+
+  # Help
+  o.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+  
+  o.separator ""
+
+  # Version
+  o.on_tail("-v", "--version", "Show version") do
+    puts "bixbite " + Bixbite.version
+    exit
+  end
+end
+
+opts.parse! # Parse arguments into `options` hash
+
+# Get source and destintation from command line
+if (ARGV.size >= 2)
+  options[:title] = ARGV[0]
+  options[:namespace] = ARGV[1]
+  options[:source] = ARGV[2] if ARGV[2]
+  options[:destination] = ARGV[3] if ARGV[3]
+else
+  puts opts
+  exit
+end
+
+Bixbite::Command.new(options).run!

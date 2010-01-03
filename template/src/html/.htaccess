@@ -1,0 +1,76 @@
+# Treat HTML as PHP
+AddType application/x-httpd-php .html
+
+# Treat cache manifest files
+AddType text/cache-manifest .manifest
+
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+
+# Minified Bootstrap File
+RewriteRule ^js/cmn/bootstrap-min\.js$ min/b=js/cmn&f=bootstrap.js,lib/LAB.js [L]
+
+# Minified Global File
+RewriteRule ^js/cmn/global-min\.js$ min/b=js/cmn&f=lib/jquery-latest.js,global.js [L]
+</IfModule>
+
+<IfModule mod_mime.c>
+	<files *.js*>
+		ForceType text/javascript
+	</files>
+
+	<files *.css*>
+		ForceType text/css
+	</files>
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/* "access plus 1 months"
+	ExpiresByType text/html "access plus 7 days"
+	ExpiresByType text/css "access plus 7 days"
+	ExpiresByType text/javascript "access plus 7 days"
+	ExpiresByType application/x-javascript "access plus 7 days"
+	ExpiresByType application/x-shockwave-flash "access plus 1 months"
+</IfModule>
+
+<IfModule mod_headers.c>
+	<IfModule mod_deflate.c>
+		BrowserMatch ^MSIE [6-9] gzip
+		BrowserMatch ^Mozilla/[5-9] gzip
+		AddOutputFilterByType DEFLATE text/html text/css text/javascript application/x-javascript
+		AddOutputFilterByType DEFLATE text/html
+		AddOutputFilterByType DEFLATE text/css
+		AddOutputFilterByType DEFLATE text/javascript
+		AddOutputFilterByType DEFLATE application/x-javascript
+		Header append Vary User-Agent
+	</IfModule>
+</IfModule>
+
+# For Apache 1.3 - Need tester
+<IfModule gzip_module>
+	mod_gzip_on Yes
+
+	mod_gzip_item_include reqheader "User-Agent: MSIE [6-9]"
+	mod_gzip_item_include reqheader "User-Agent: Mozilla/[5-9]"
+	
+	mod_gzip_item_include file \.html$
+	mod_gzip_item_include file \.php$
+	mod_gzip_item_include file \.js$
+	mod_gzip_item_include file \.css$
+	
+	mod_gzip_item_include mime ^text/html$
+	mod_gzip_item_include mime ^text/css$
+	mod_gzip_item_include mime ^text/javascript$
+	mod_gzip_item_exclude mime ^image/
+</IfModule>
+
+FileETag None
+
+# # Turn on caching
+<FilesMatch "\.(html|jpg|jpeg|png|gif|js|css|swf|ico)$">
+Header set Cache-Control "public"
+Header set Vary "Accept-Encoding" 
+Header append Vary "User-Agent" 
+</FilesMatch>
