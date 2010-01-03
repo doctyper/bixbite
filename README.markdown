@@ -10,6 +10,7 @@ Bixbite creates a project structure optimal for client-side development.
 
 Additionally, Bixbite includes rake tasks to automatically:
 
+* Create new page templates & associated JS/CSS files
 * Prepare files for deployment
 * Generate NaturalDocs-compliant documentation
 * Compress PNG files using OptiPNG
