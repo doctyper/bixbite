@@ -10,9 +10,8 @@ Description:
 	Includes all __PAGE_TEMPLATE_CAPITALIZE__ functionality
 
 Requires:
-	- jQuery 1.3.2 - <http://jquery.com>
-	- jQuery Flash - <jquery.flash.js>
-	- jQuery Easing - <jquery.easing.js>
+	- LABjs <http://labjs.com/>
+	- __JS_LIB__
 
 Requires:
 	- <bootstrap.js>
