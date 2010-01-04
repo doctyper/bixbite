@@ -150,6 +150,8 @@ Gem::Specification.new do |s|
      "template/src/html/css/cmn/global.css",
      "template/src/html/css/cmn/ie.css",
      "template/src/html/css/cmn/ie6.css",
+     "template/src/html/images/cmn/.htaccess",
+     "template/src/html/images/tmp/.htaccess",
      "template/src/html/includes/debug.inc",
      "template/src/html/includes/footer.inc",
      "template/src/html/includes/header.inc",

@@ -26,6 +26,7 @@ begin
     gem.add_dependency("yui-compressor", ">= 0.9.1")
     gem.add_dependency("highline", ">= 1.5.1")
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    Jeweler::GemcutterTasks.new
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
