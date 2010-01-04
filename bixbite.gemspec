@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bixbite}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Richard Herrera", "Lenny Burdette"]
-  s.date = %q{2010-01-03}
+  s.date = %q{2010-01-04}
   s.default_executable = %q{bixbite}
   s.description = %q{Bixbite is a project initializer for dynamic to static publishing}
   s.email = %q{rich@doctyper.com}
