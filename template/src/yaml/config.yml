@@ -1,8 +1,8 @@
 name:
-    - The Foo Project
+    - __PROJECT_NAME__
     
 namespace:
-    - FOO
+    - __PROJECT_NAMESPACE__
 
 parse:
     - src/**/*

@@ -13,7 +13,7 @@ Additionally, Bixbite includes rake tasks to automatically:
 * Create new page templates & associated JS/CSS files
 * Prepare files for deployment
 * Generate NaturalDocs-compliant documentation
-* Compress PNG files using OptiPNG
+* Compress PNG files using [PNGout](http://advsys.net/ken/utils.htm)
 * Gracefully degrade 24-bit PNG files for Internet Explorer 6
 * Deliver compressed versions of CSS & JavaScript files
 * Add new files, remove outdated files from Subversion
