@@ -5,21 +5,4 @@ require 'assets/bixbite/Rakefile'
 #	 __PROJECT_NAME__ Build Tasks
 #  See assets/bixbite/Rakefile for more information
 # 
-#	 Tasks for pages:
-#		 - Update deploy directory: rake prep
-# 
-#	 How the delivery is assembled from source:
-#		 - The source of the project is kept in src/html
-#		 - The directory src/yaml contains a "deploy.yml" file
-#		 - The deploy file contains arrays of global patterns for copying files 
-#			 (files:) and rendering files through the PHP command line interface (render:)
-#		 - Run rake prep from the root of trunk.
-#			 This will wipe out the existing files in the deploy 
-#			 folder before copying/rendering files back again. This allows you to 
-#			 run "svn status" to check to see if files were removed.
-#		 - Committing the deploy folder lets you see how the stable, deploy-
-#			 ready project changes over time, making changelogs easier to write
-#		 - The task will also output/update NaturalDocs-compatible JavaScript documentation
-#			 The documentation can be found in documentation/js
-#
 ###############################################################################

@@ -1,3 +1,135 @@
+###############################################################################
+# 
+#  Overview
+#  Bixbite comes bundled with myriad of pre-defined rake tasks to make development easier. The following is a list of all provided tasks.
+# 
+###############################################################################
+# 
+#  RAKE PREP
+# 
+#  Usage: rake prep
+#  
+#  A shortcut for the most common tasks. Runs the following in sequential order:
+#  
+#  - files:generate
+#  - documentation:generate
+#  - svn:prep
+#  - bixbite namespace
+#  - bixbite:page
+#  
+#  Usage: rake bixbite:page "Page Title" page-name
+#  Example: rake bixbite:page "Home Page" home # creates home.html / home.css / home.js
+#  Example: rake bixbite:page "About Page" about # creates about.html / about.css / about.js
+# 
+###############################################################################
+#  
+#  FILES NAMESPACE
+# 
+# 
+#  files:generate
+#  ____________________________________________________________________________
+#  Usage: rake files:generate
+#  
+#  A shortcut for common file tasks. Runs the following in sequential order:
+#  
+#  - files:copy
+#  - files:render
+#  - files:empty
+# 
+# 
+#  files:compress
+#  ____________________________________________________________________________
+#  Usage: rake files:compress
+#  
+#  Takes targeted CSS & JavaScript files and compresses them to a minified directory. Targeted files can be configured in src/yaml/deploy.yml
+#  
+# 
+#  files:copy
+#  ____________________________________________________________________________
+#  Usage: rake files:generate
+#  
+#  Copies files from source directory to destination directory. Directories can be configured in src/yaml/deploy.yml
+#  
+# 
+#  files:render
+#  ____________________________________________________________________________
+#  Usage: rake files:render
+#  
+#  Renders PHP-dependend files through the PHP CLI. Files can be configured in src/yaml/deploy.yml
+#  
+# 
+#  files:empty
+#  ____________________________________________________________________________
+#  Usage: rake files:empty
+#  
+#  Empties destination directory. Directories can be configured in src/yaml/deploy.yml
+# 
+###############################################################################
+# 
+#  SVN NAMESPACE
+#  
+# 
+#  svn:prep
+#  ____________________________________________________________________________
+#  Usage: rake svn:prep
+#  
+#  A shortcut for common svn tasks. Runs the following in sequential order:
+#  
+#  svn:add
+#  svn:remove
+#  svn:diff
+#  
+# 
+#  svn:add
+#  ____________________________________________________________________________
+#  Usage: rake svn:add
+#  
+#  Runs svn add on files with a status flag of ‘?’.
+#  
+# 
+#  svn:remove
+#  ____________________________________________________________________________
+#  Usage: rake svn:remove
+#  
+#  Runs svn remove on files with a status flag of ‘!’.
+#  
+# 
+#  svn:diff
+#  ____________________________________________________________________________
+#  Usage: rake svn:diff
+#  
+#  Generates a diff file with current committed revision.
+# 
+###############################################################################
+# 
+#  documentation namespace
+#  
+# 
+#  documentation:generate
+#  ____________________________________________________________________________
+#  Usage: rake documentation:generate
+# 
+###############################################################################
+# 
+#  png namespace
+#  
+# 
+#  png:compress
+#  ____________________________________________________________________________
+#  Usage: rake png:compress
+#  
+#  Runs PNGout on PNGs found in source image directory.
+#  
+# 
+#  png:ie6
+#  ____________________________________________________________________________
+#  Usage: rake png:ie6
+#  
+#  Adds a white background fallback for IE 6 support. Files render with full transparency in all other browsers.
+# 
+#
+###############################################################################
+
 #!/usr/bin/ruby
 
 require "yaml"
