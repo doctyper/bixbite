@@ -141,7 +141,6 @@ Gem::Specification.new do |s|
      "template/assets/naturaldocs/NaturalDocs/Styles/Default.css",
      "template/assets/naturaldocs/NaturalDocs/Styles/Roman.css",
      "template/assets/naturaldocs/NaturalDocs/Styles/Small.css",
-     "template/assets/utilities/White Background in IE 6.txt",
      "template/assets/utilities/pngout",
      "template/deploy/public_html/.htaccess",
      "template/deploy/public_html/.htaccess",
@@ -208,8 +207,7 @@ Gem::Specification.new do |s|
      "template/src/templates/js/template.js",
      "template/src/templates/template.html",
      "template/src/yaml/config.yml",
-     "template/src/yaml/deploy.yml",
-     "template/src/yaml/validate.yml"
+     "template/src/yaml/deploy.yml"
   ]
   s.homepage = %q{http://github.com/doctyper/bixbite}
   s.rdoc_options = ["--charset=UTF-8"]
