@@ -28,7 +28,7 @@ compress:
             - js/cmn/lib/LAB.js
             
         cmn/global.js:
-            - js/cmn/lib/jquery-latest.js
+            - js/cmn/lib/__JS_LIB_LOWERCASE__-latest.js
             - js/cmn/global.js
             
         standalone:
