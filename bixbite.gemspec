@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bixbite}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Richard Herrera", "Lenny Burdette"]
-  s.date = %q{2010-01-05}
+  s.date = %q{2010-01-28}
   s.default_executable = %q{bixbite}
   s.description = %q{Bixbite is a project initializer for dynamic to static publishing}
   s.email = %q{rich@doctyper.com}
@@ -141,6 +141,7 @@ Gem::Specification.new do |s|
      "template/assets/naturaldocs/NaturalDocs/Styles/Default.css",
      "template/assets/naturaldocs/NaturalDocs/Styles/Roman.css",
      "template/assets/naturaldocs/NaturalDocs/Styles/Small.css",
+     "template/assets/utilities/.bix",
      "template/assets/utilities/pngout",
      "template/deploy/public_html/.htaccess",
      "template/documentation/js/.htaccess",
@@ -207,7 +208,8 @@ Gem::Specification.new do |s|
      "template/src/templates/js/template.js",
      "template/src/templates/template.html",
      "template/src/yaml/config.yml",
-     "template/src/yaml/deploy.yml"
+     "template/src/yaml/deploy.yml",
+     "template/src/yaml/externals.yml"
   ]
   s.homepage = %q{http://github.com/doctyper/bixbite}
   s.rdoc_options = ["--charset=UTF-8"]

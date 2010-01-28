@@ -11,7 +11,8 @@ require "highline/import"
 options = {
   :source => File.expand_path(File.dirname(__FILE__) + "/../template/"),
   :destination => File.expand_path(Dir.getwd),
-  :lib => 'jQuery'
+  :lib => 'jQuery',
+  :pngout => true
 }
 
 USER_TEMPLATE = File.expand_path(File.dirname(__FILE__) + "/../user-defined-template")

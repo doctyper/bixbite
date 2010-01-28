@@ -46,13 +46,13 @@ module Bixbite
       require 'net/http'
       
       def get domain, source, destination
-        Net::HTTP.start(domain) { |http|
+        Net::HTTP.start(domain) do |http|
           resp = http.get(source)
-          open(destination, "wb") { |file|
+          open(destination, "wb") do |file|
             file.write(resp.body)
             puts "Done!"
-          }
-        }
+          end
+        end
       end
       
       google = 'ajax.googleapis.com'
@@ -70,6 +70,7 @@ module Bixbite
           get google, '/ajax/libs/mootools/1.2/mootools.js', dest
         else
       end
+      
     end
     
   end

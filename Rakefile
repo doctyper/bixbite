@@ -14,6 +14,7 @@ begin
     gem.require_paths << "template"
     gem.files = [
       "lib/**/*",
+      "template/assets/utilities/.bix",
       "template/deploy/public_html/.htaccess",
       "template/documentation/js/.htaccess",
       "template/**/*",
