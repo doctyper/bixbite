@@ -36,7 +36,7 @@
 				$output = ".script(\"$script\")";
 				
 				if ($count == $i) {
-					$output .= "\n\t\t\t\n\t\t\t// Fire when everything is loaded\n\t\t\t.wait(function() {\n\t\t\t\t__PROJECT_NAME__.utils.init();\n\t\t\t});";
+					$output .= "\n\t\t\t\n\t\t\t// Fire when everything is loaded\n\t\t\t.wait(function() {\n\t\t\t\t__PROJECT_NAMESPACE__.utils.init();\n\t\t\t});";
 				} else {
 					$output .= ".wait()\n\t\t\t";
 				}
