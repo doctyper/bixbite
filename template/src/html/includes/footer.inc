@@ -17,7 +17,7 @@
 <?php if ($this->minify()) : ?>
 			// Global Minified JS
 			.script("/js/cmn/global-min.js")<?php else: ?>
-			// jQuery
+			// __JS_LIB__
 			.script("/js/cmn/lib/__JS_LIB_LOWERCASE__-latest.js").wait()
 			
 			// Global JS
